@@ -1,0 +1,18 @@
+# Archivos de entorno
+.env
+.env.*
+
+# Carpetas de entorno
+venv/
+env/
+.venv/
+.envrc
+
+# __pycache__ y otros archivos temporales
+__pycache__/
+*.py[cod]
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+Entrada (1x28x28)
+    ↓
+Conv2D (1 → 32, 3x3, padding=1)
+    ↓
+ReLU
+    ↓
+MaxPool2D (2x2)
+    ↓
+Conv2D (32 → 64, 3x3, padding=1)
+    ↓
+ReLU
+    ↓
+MaxPool2D (2x2)
+    ↓
+Flatten (64×7×7 → 3136)
+    ↓
+Linear (3136 → 128)
+    ↓
+ReLU
+    ↓
+Linear (128 → 10)
+    ↓
+Softmax implícito → Predicción (dígito 0-9)

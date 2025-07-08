@@ -1,0 +1,65 @@
+Hiperparámetros
+
+- Optimizador: Adam  
+- Learning rate: 0.001  
+- Épocas: 5  
+- Batch size: 64  
+- Función de pérdida: CrossEntropyLoss
+
+---
+
+Resultados
+
+- Precisión en entrenamiento: ~99%  
+- Precisión en prueba (test): ~98%
+
+> Evaluado con el conjunto oficial de 10,000 imágenes de MNIST.
+
+---
+
+Modelo
+
+- Framework: PyTorch  
+- Archivo generado: `cnn_mnist.pth` 
+
+---
+
+Flujo de inferencia
+Se recibe una imagen en base64 desde el frontend o Swagger.
+Se decodifica y convierte a tensor PyTorch [1, 1, 28, 28].
+El modelo predice un vector de tamaño 10 (una probabilidad por clase).
+Se retorna el índice con mayor probabilidad como predicción.
+
+---
+
+Justificación 
+Compacta: Dos bloques de convolución + pooling son suficientes para aprender patrones en imágenes pequeñas como las de MNIST.
+Eficiente para producción: Puede ejecutarse rápido incluso en CPU, ideal para APIs web.
+Capacidad demostrada: Arquitectura basada en CNNs probadas para clasificación de dígitos
+
+
+### Arquitectura del modelo
+
+| Capa        | Tipo              | Detalles                                     |
+|-------------|-------------------|----------------------------------------------|
+| `Conv2d`    | Convolución 2D    | 1 canal → 32 filtros, kernel 3x3, padding=1  |
+| `ReLU`      | Activación        |                                              |
+| `MaxPool2d` | Pooling           | 2x2                                          |
+| `Conv2d`    | Convolución 2D    | 32 → 64 filtros, kernel 3x3, padding=1       |
+| `ReLU`      | Activación        |                                              |
+| `MaxPool2d` | Pooling           | 2x2                                          |
+| `Flatten`   | Plano             | 64×7×7 → 3136                                |
+| `Linear`    | Densa             | 3136 → 128                                   |
+| `ReLU`      | Activación        |                                              |
+| `Linear`    | Salida            | 128 → 10 clases                              |
+
+---
+
+
+
+### Justificación
+
+- Arquitectura clásica de CNN efectiva para tareas visuales simples como MNIST.
+- Liviana y rápida para despliegue en API web.
+- Usa padding y max pooling para preservar información y reducir dimensionalidad sin overfitting.
+

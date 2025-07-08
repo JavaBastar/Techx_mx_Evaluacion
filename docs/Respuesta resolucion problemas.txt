@@ -1,0 +1,35 @@
+Resolución de problemas
+
+Objetivo:
+Evaluar capacidad de liderazgo técnico, resolución de ambigüedad, análisis de tradeoffs, y diseño de sistemas escalables.
+
+🧠 Caso 1: Integración multiplataforma
+
+Tu equipo necesita integrar un sistema de scraping de productos que alimente tanto un chatbot (para consultas de clientes) como un dashboard (para analistas de negocio). El cliente quiere respuestas en tiempo real, pero el scraping toma entre 5 y 10 segundos por producto nuevo. ¿Cómo diseñarías esta arquitectura?
+🔹 Entrega esperada:
+
+Diagrama del sistema propuesto.
+Estrategia de asincronía, colas o almacenamiento intermedio.
+Justificación técnica.
+
+
+
+🧠 Caso 2: Fallo del OCR en producción
+
+Después de lanzar el OCR en producción, se reportan errores en más del 35% de los recibos escaneados (mal reconocimiento de fechas y totales). ¿Cómo abordarías esta situación como líder del área?
+🔹 Entrega esperada:
+
+Diagnóstico probable (modelo, input, UX).
+Solución técnica propuesta.
+Priorización de tareas y comunicación con stakeholders.
+
+
+
+🧠 Caso 3: Chatbot con datos erróneos
+
+El chatbot devuelve información desactualizada o incorrecta sobre compradores frecuentes. El modelo NLP funciona, pero las respuestas están mal. ¿Cómo organizarías el diagnóstico y corrección?
+🔹 Entrega esperada:
+
+Hipótesis de errores (fuente de datos, cacheo, entrenamiento).
+Estrategia para testing, logging y validación.
+Propuesta para monitoreo y mejora continua.
